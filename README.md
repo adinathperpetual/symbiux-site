@@ -26,8 +26,12 @@ python3 build-pages.py /<repo>/      # writes dist/ (adds .nojekyll and 404.html
 python3 build-pages.py /             # for <user>.github.io repos or a custom domain
 ```
 
-Publish the contents of `dist/` on the `gh-pages` branch, then set
-Settings → Pages → Source: "Deploy from a branch", `gh-pages` / `(root)`.
+The built site is committed in two places, so Pages works with either branch selected:
+- repo root on `main` (`index.html`, `assets/`, `404.html`, `.nojekyll`, …)
+- the `gh-pages` branch
+
+After changing anything in `public/`, rebuild with `python3 build-pages.py /symbiux-site/` and copy
+`dist/` over the repo root (and/or the `gh-pages` branch).
 
 ## Layout
 
