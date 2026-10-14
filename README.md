@@ -16,6 +16,19 @@ Or serve the `public/` folder with any static host (nginx, Apache, Netlify, Verc
 GitHub Pages, S3, cPanel `public_html`, `npx serve public`, `python3 -m http.server -d public`).
 The site is a single page, so no rewrite rules are required.
 
+## GitHub Pages
+
+A project site lives under a sub-path (`https://<user>.github.io/<repo>/`), so build a copy with
+every asset path and the router base path adjusted:
+
+```bash
+python3 build-pages.py /<repo>/      # writes dist/ (adds .nojekyll and 404.html)
+python3 build-pages.py /             # for <user>.github.io repos or a custom domain
+```
+
+Publish the contents of `dist/` on the `gh-pages` branch, then set
+Settings → Pages → Source: "Deploy from a branch", `gh-pages` / `(root)`.
+
 ## Layout
 
 ```
