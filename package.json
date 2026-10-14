@@ -1,0 +1,12 @@
+{
+  "name": "symbiux-clone",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Self-hosted, offline-capable clone of symbiux.lovable.app (no runtime calls to lovable.app or Google Fonts).",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
